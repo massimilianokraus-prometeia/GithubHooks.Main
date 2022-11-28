@@ -24,7 +24,7 @@ jobs:
           workflow: artifacts-action.yml
           repo:  massimilianokraus-prometeia/GithubHooks.Dotnet_Core_Console
     - name: Run Console App Artifact          
-      run: dotnet ./console-app-artifacts/GithubHooks.Dotnet_Core_Console.dll -- "${{ github.event.pull_request.head.sha }} ${{ github.event.pull_request.user.login }} ${{ github.event.pull_request.title }} ${{ github.event.pull_request.number }}"
+      run: dotnet ./console-app-artifacts/GithubHooks.Dotnet_Core_Console.dll "${{ github.event.pull_request.head.sha }}" "${{ github.event.pull_request.user.login }}" "${{ github.event.pull_request.title }}" "${{ github.event.pull_request.number }}"
     - name: Enable Automerge
       run: gh pr merge ${{ github.event.pull_request.number }} --auto --merge
       env:
@@ -44,7 +44,7 @@ jobs:
 #           workflow: artifacts-action.yml
 #           repo:  massimilianokraus-prometeia/GithubHooks.Dotnet_Core_Console
 #     - name: Run Console App Artifact          
-#       run: dotnet ./console-app-artifacts/GithubHooks.Dotnet_Core_Console.dll -- "${{ github.event.pull_request.head.sha }}" "${{ github.event.pull_request.user.login }}" "${{ github.event.pull_request.title }}" "${{ github.event.pull_request.number }}"
+#       run: dotnet ./console-app-artifacts/GithubHooks.Dotnet_Core_Console.dll "${{ github.event.pull_request.head.sha }}" "${{ github.event.pull_request.user.login }}" "${{ github.event.pull_request.title }}" "${{ github.event.pull_request.number }}"
 
 
     
