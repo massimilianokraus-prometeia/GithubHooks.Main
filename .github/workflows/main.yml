@@ -22,6 +22,7 @@ jobs:
       with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           workflow: artifacts-action.yml
+          name: console-app-artifacts
           repo:  massimilianokraus-prometeia/GithubHooks.Dotnet_Core_Console
     - name: Run Console App Artifact          
       run: dotnet ./console-app-artifacts/GithubHooks.Dotnet_Core_Console.dll -- "${{ github.event.pull_request.head.sha }}" "${{ github.event.pull_request.user.login }}" "${{ github.event.pull_request.title }}" "${{ github.event.pull_request.number }}"
