@@ -46,7 +46,7 @@ jobs:
     - name: Enable Automerge
       run: gh pr merge ${{ github.event.pull_request.number }} --auto --merge
       env:
-        GH_TOKEN: ${{ secrets.MY_PAT }}
+        GH_TOKEN: ${{ steps.githubAppAuth.outputs.token }}
     - name: Add Approval Review
       run: gh pr review ${{ github.event.pull_request.number }} --approve
       env:
