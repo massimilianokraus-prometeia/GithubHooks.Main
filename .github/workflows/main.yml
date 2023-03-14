@@ -1,7 +1,7 @@
 name: Run Applications when pull request
 
 on:
- #  push:
+ ##  push:
   pull_request:
     branches: [ "main" ]
     
